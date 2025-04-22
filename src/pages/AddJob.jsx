@@ -1,5 +1,7 @@
 import NavBar from "../components/NavBar";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { Zoom } from "react-toastify";
 
 function AddJob({ onAddJob }) {
     const [jobTitle, setTitle] = useState("");
@@ -9,6 +11,20 @@ function AddJob({ onAddJob }) {
     const [contacts, setContact] = useState("");
     const [status, setStatus] = useState("");
     const [description, setDescription] = useState("");
+
+    function success(){
+        toast.success('Job Added Successfully!', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Zoom,
+            });
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -38,9 +54,11 @@ function AddJob({ onAddJob }) {
                 setContact("");
                 setStatus("");
                 setDescription("");
+                success()
             })
             .catch((error) => console.error(error));
     }
+
 
     return (
         <div className="min-h-screen bg-gray-100">
@@ -108,8 +126,9 @@ function AddJob({ onAddJob }) {
                             type="text"
                             name="status"
                             value={status}
-                            placeholder="Enter status"
+                            placeholder="Enter Open or Closed"
                             onChange={(e) => setStatus(e.target.value)}
+                            
                             className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
@@ -124,7 +143,7 @@ function AddJob({ onAddJob }) {
                             className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
-                    <button
+                    <button 
                         type="submit"
                         className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition"
                     >
