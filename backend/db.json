@@ -5,7 +5,7 @@
         "jobTitle": "Frontend Developer",
         "company": "Safaricom",
         "slots": 30,
-        "applicationsDeadline": "2025-04-10",
+        "deadline": "2025-04-10",
         "contacts": "careers@safaricom.co.ke",
         "status": "Open",
         "description": "Nairobi-based role with flexible working hours."
@@ -15,7 +15,7 @@
         "jobTitle": "Backend Engineer",
         "company": "Andela",
         "slots": 15,
-        "applicationsDeadline": "2025-04-20",
+        "deadline": "2025-04-20",
         "contacts": "jobs@andela.com",
         "status": "Open",
         "description": "Remote backend role with focus on Node.js."
@@ -25,7 +25,7 @@
         "jobTitle": "UI/UX Designer",
         "company": "Moringa School",
         "slots": 5,
-        "applicationsDeadline": "2025-04-25",
+        "deadline": "2025-04-25",
         "contacts": "design@moringaschool.com",
         "status": "Closed",
         "description": "Creative design position based in Nairobi."
