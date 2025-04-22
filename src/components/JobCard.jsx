@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 function JobCard({ opportunity }){
+    if(!opportunity){
+        return<div>Not found</div>
+    }
     return(
         <div>
             <h2>{ opportunity.title }</h2>
@@ -9,7 +12,7 @@ function JobCard({ opportunity }){
             <p>{ opportunity.deadline }</p>
             <p>{ opportunity.contact }</p>
             <p>{ opportunity.status }</p>
-            <Link to={`/opportunity/${opportunity.id}`}>View Profile</Link>
+            <Link to={`/job/${opportunity.id}`}>View Profile</Link>
         </div>
     )
 }
