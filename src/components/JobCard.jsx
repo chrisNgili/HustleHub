@@ -6,13 +6,13 @@ function JobCard({ opportunity }){
     }
     return(
         <div>
-            <h2>{ opportunity.title }</h2>
-            <p>{opportunity.company }</p>
-            <p>{ opportunity.slots }</p>
-            <p>{ opportunity.deadline }</p>
-            <p>{ opportunity.contact }</p>
-            <p>{ opportunity.status }</p>
-            <Link to={`/job/${opportunity.id}`}>View Profile</Link>
+            <h2> Title: { opportunity.jobTitle }</h2>
+            <p>Company: {opportunity.company }</p>
+            <p>Slots: { opportunity.slots }</p>
+            <p>{new Date(opportunity.applicationsDeadline).toLocaleDateString()}</p>
+            <p>Contacts: { opportunity.contacts }</p>
+            <p>Status: { opportunity.status }</p>
+            <Link to={`/job/${opportunity.id}`}>View Details</Link>
         </div>
     )
 }
