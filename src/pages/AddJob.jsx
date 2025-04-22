@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 import React, { useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { Zoom } from "react-toastify";
 
 function AddJob({ onAddJob }) {
@@ -54,7 +54,6 @@ function AddJob({ onAddJob }) {
                 setContact("");
                 setStatus("");
                 setDescription("");
-                success()
             })
             .catch((error) => console.error(error));
     }
@@ -143,12 +142,10 @@ function AddJob({ onAddJob }) {
                             className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
-                    <button 
-                        type="submit"
-                        className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition"
-                    >
+                    <button onClick={success} type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
                         Add to Job List
                     </button>
+                    <ToastContainer />
                 </form>
             </div>
         </div>
