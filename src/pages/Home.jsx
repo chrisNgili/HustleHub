@@ -13,24 +13,20 @@ function Home() {
         .then(data => setOpportunity(data))
         .catch(error => console.error(error));
     }, []);
-
-    function handleDelete(deletedJob){
-        const refreshedJobs = opportunities.filter((opportunity) => opportunity.id !== deletedJob.id)
-        setOpportunity(refreshedJobs)
-    }
-    function handleEdit(editedJob){
-        const updatedJob = opportunities.map((opportunity) => {
-            if(opportunity.id === editedJob.id){
-                return editedJob
-            }else{
-                return opportunity
-            }
+    function handleDelete(id) {
+        fetch(`https://hustlehub-rc5s.onrender.com/opportunities/${id}`, {
+            method: "DELETE",
         })
-        setOpportunity(updatedJob)
+        .then(() => {
+            const updated = opportunities.filter((op) => op.id !== id);
+            setOpportunity(updated);
+        })
+        .catch((err) => console.error(err));
     }
+ 
 
     const jobList = opportunities.map(opportunity => {
-        return <JobCard key={opportunity.id} opportunity={opportunity} onUpdateJob={handleEdit} onDeleteJob={handleDelete} />;
+        return <JobCard key={opportunity.id} opportunity={opportunity} onDelete={handleDelete}   />;
     });
 
 

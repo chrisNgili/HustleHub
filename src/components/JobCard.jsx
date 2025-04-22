@@ -1,26 +1,10 @@
 import { Link } from "react-router-dom";
 
-function JobCard({ opportunity, onDeleteJob, onUpdateJob }) {
+function JobCard({ opportunity, onDelete, onEdit }) {
     if (!opportunity) {
         return <div className="text-center text-gray-500">Not found</div>
     }
-    function handleDelete(){
-        fetch(`https://hustlehub-rc5s.onrender.com/opportunities/${opportunityId}`,{
-            method: "DELETE",
-        })
-        .then((r) => r.json())
-        .then(() => onDeleteJob(opportunity))
-    }
-    function handleEdit(){
-        fetch(`https://hustlehub-rc5s.onrender.com/opportunities/${opportunityId}`, {
-            method: "PATCH",
-            headers:{
-                "Content-Type": "application/json",
-            },
-            body: Json.stringify({})
-        })
-    }
-    
+
     return (
         <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 flex flex-col justify-between">
             <div className="space-y-2">
@@ -31,15 +15,29 @@ function JobCard({ opportunity, onDeleteJob, onUpdateJob }) {
                 <p className="text-gray-600">Contacts: {opportunity.contacts}</p>  
                 <p className="text-gray-600">Status: {opportunity.status}</p>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 flex justify-between gap-2">
                 <Link 
                     to={`/job/${opportunity.id}`} 
-                    className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
+                    className="flex-1 text-center px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
                 >
                     View Details
                 </Link>
+                <Link
+                    to={`/edit/${opportunity.id}`}
+                    className="ml-2 inline-block px-4 py-2 bg-yellow-500 text-white rounded-lg text-sm font-medium hover:bg-yellow-600"
+                >
+                    Edit
+                </Link>
+
+                <button 
+                    onClick={() => onDelete(opportunity.id)}
+                    className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-700 transition"
+                >
+                    Delete
+                </button>
             </div>
         </div>
     )
 }
+
 export default JobCard

@@ -4,6 +4,7 @@ import AddJob from "./pages/AddJob"
 import About from "./pages/About" 
 import JobProfile from "./pages/JobProfile"
 import ErrorPage from "./pages/Errorpage"
+import EditJob from "./pages/EditJob"
 
 const routes =[
     {
@@ -24,6 +25,11 @@ const routes =[
     {
         path: "/job/:id",
         element: <JobProfile />,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: "/edit/:id",
+        element: <EditJob />,
         errorElement: <ErrorPage />
     }
 ]
