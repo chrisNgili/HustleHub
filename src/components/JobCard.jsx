@@ -1,9 +1,26 @@
 import { Link } from "react-router-dom";
 
-function JobCard({ opportunity }) {
+function JobCard({ opportunity, onDeleteJob, onUpdateJob }) {
     if (!opportunity) {
         return <div className="text-center text-gray-500">Not found</div>
     }
+    function handleDelete(){
+        fetch(`https://hustlehub-rc5s.onrender.com/opportunities/${opportunityId}`,{
+            method: "DELETE",
+        })
+        .then((r) => r.json())
+        .then(() => onDeleteJob(opportunity))
+    }
+    function handleEdit(){
+        fetch(`https://hustlehub-rc5s.onrender.com/opportunities/${opportunityId}`, {
+            method: "PATCH",
+            headers:{
+                "Content-Type": "application/json",
+            },
+            body: Json.stringify({})
+        })
+    }
+    
     return (
         <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 flex flex-col justify-between">
             <div className="space-y-2">
