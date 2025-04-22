@@ -93,7 +93,7 @@ function AddJob( {onAddJob} ){
                 name="description"
                 value={description}
                 placeholder="Enter Job description"
-                onChange={(e) => setDEscription(e.target.value)}
+                onChange={(e) => setDescription(e.target.value)}
                 />
             </label>
 
