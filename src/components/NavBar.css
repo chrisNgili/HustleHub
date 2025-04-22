@@ -1,0 +1,35 @@
+nav {
+    background: #1a365d;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: #cbd5e0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-link:hover {
+    background: #2c5282;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: #63b3ed;
+    border-bottom: 3px solid #63b3ed;
+    padding-bottom: 0.3rem;
+}
