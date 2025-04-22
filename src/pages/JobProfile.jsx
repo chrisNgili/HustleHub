@@ -14,7 +14,19 @@ function JobProfile(){
         .catch(err => console.error(err))
     }, [opportunityId])
 
-
+    if(!opportunity.title){
+        return<h1>Loading...</h1>
+    };
+    return(
+        <>
+            <header>
+                <NavBar />          
+            </header>
+            <main>
+                <h1>{opportunity.title}</h1>
+            </main>
+        </>
+    )
 }
 
 export default JobProfile;
