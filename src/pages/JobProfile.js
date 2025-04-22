@@ -8,6 +8,13 @@ function JobProfile(){
     const opportunityId = params.id;
 
     useEffect(() => {
-        fetch(``)
-    })
+        fetch(`https://hustlehub-rc5s.onrender.com/opportunities/${opportunityId}`)
+        .then(r => r.json())
+        .then(data => setOpportunity(data))
+        .catch(err => console.error(err))
+    }, [opportunityId])
+
+
 }
+
+export default JobProfile;
