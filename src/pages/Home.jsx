@@ -8,5 +8,12 @@ function Home(){
 
     useEffect(() => {
         fetch("https://hustlehub-rc5s.onrender.com/opportunities")
+        .then(r => r.json())
+        .then(data => setOpportunity(data))
+        .catch(error => console.error(error))
+    }, [])
+
+    const jobList = opportunities.map(opportunity =>{
+        return <JobCard key={opportunity.id} opportunity={opportunity} />
     })
 }
