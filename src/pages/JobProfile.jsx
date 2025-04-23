@@ -36,7 +36,7 @@ function JobProfile() {
             <header>
                 <NavBar />
             </header>
-            <main className="min-h-screen bg-gray-100 py-10 px-4">
+            <main className="min-h-screen bg-green-100 py-10 px-4">
                 <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
                     <h1 className="text-4xl font-bold text-gray-800 mb-6 text-center">Job Profile:</h1>
                     <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">{opportunity.jobTitle}</h2>

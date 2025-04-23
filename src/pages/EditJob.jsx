@@ -48,7 +48,7 @@ function EditJob() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen bg-green-100">
             <NavBar />
             <div className="max-w-3xl mx-auto p-8 bg-white shadow-md rounded-xl mt-8">
                 <h2 className="text-2xl font-bold mb-6">Edit Opportunity</h2>

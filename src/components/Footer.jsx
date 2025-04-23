@@ -39,8 +39,8 @@ function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-2">Contact Us</h3>
-            <p className="text-gray-300 text-sm">Email: support@hustlehub.com</p>
-            <p className="text-gray-300 text-sm">Phone: (123) 456-7890</p>
+            <p className="text-gray-300 text-sm">Email: support@hustlehub.co.ke</p>
+            <p className="text-gray-300 text-sm">Phone: (254) 718-395559</p>
           </div>
         </div>
         <div className="mt-6 border-t border-gray-700 pt-4 text-center">

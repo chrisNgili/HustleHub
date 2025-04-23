@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import JobCard from "../components/JobCard";
 import Sort from "../components/Sort";
 import Footer from "../components/Footer";
+import gif from "../images/Hiring No Money GIF by INTO ACTION.gif"
 
 function Home() {
     const [opportunities, setOpportunity] = useState([]);
@@ -21,6 +22,8 @@ function Home() {
         .then(() => {
             const updated = opportunities.filter((op) => op.id !== id);
             setOpportunity(updated);
+        }).then(() =>{
+            
         })
         .catch((err) => console.error(err));
     }
@@ -32,11 +35,13 @@ function Home() {
 
 
     return (
-        <div className="flex flex-col min-h-screen bg-gray-50">
+        <div className="flex flex-col min-h-screen bg-green-100">
             <header className="sticky top-0 z-50">
                 <NavBar />
             </header>
-            
+            <div className="flex justify-center mb-6">
+                <img src={gif} alt="Animated Image" width="300" height="auto" />
+            </div>
             <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
                     Available Opportunities

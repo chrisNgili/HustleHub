@@ -1,11 +1,11 @@
 import NavBar from "../components/NavBar";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import { Zoom } from "react-toastify";
 import Footer from "../components/Footer";
+import Swal from "sweetalert2";
+import 'sweetalert2/src/sweetalert2.scss'
 
-function AddJob({ onAddJob }) {
+function AddJob() {
     const [jobTitle, setTitle] = useState("");
     const [company, setCompany] = useState("");
     const [slots, setSlots] = useState("");
@@ -14,20 +14,15 @@ function AddJob({ onAddJob }) {
     const [status, setStatus] = useState("");
     const [description, setDescription] = useState("");
     const navigate = useNavigate()
-    function success(){
-        toast.success('Job Added Successfully!', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Zoom,
-            });
-    }
 
+    function success(){
+        Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Good Job",
+            footer: '<a href="#">Added successfully</a>'
+          });
+    }
     function handleSubmit(e) {
         e.preventDefault();
         const newJob = {
@@ -48,7 +43,6 @@ function AddJob({ onAddJob }) {
         })
             .then((r) => r.json())
             .then((data) => {
-                onAddJob(data);
                 setTitle("");
                 setCompany("");
                 setSlots("");
@@ -58,13 +52,14 @@ function AddJob({ onAddJob }) {
                 setDescription("");
                 success()
                 navigate("/")
+                console.log(success)
             })
             .catch((error) => console.error(error));
     }
 
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen bg-green-100">
             <NavBar />
             <div className="max-w-3xl mx-auto py-10 px-6 bg-white shadow-md rounded-xl mt-8">
                 <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">Add a Job Opportunity</h2>
@@ -130,7 +125,7 @@ function AddJob({ onAddJob }) {
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Status </label>
-                        <select 
+                        <select className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
                         value = {status}
                         onChange={(e) => setStatus(e.target.value)}>
                             <option value="Open">Open</option>
@@ -152,7 +147,6 @@ function AddJob({ onAddJob }) {
                     <button  type="submit"  className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
                         Add to Job List
                     </button>
-                    <ToastContainer />
                 </form>
             </div>
             <Footer />
