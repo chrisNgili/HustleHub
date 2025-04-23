@@ -1,5 +1,6 @@
 import NavBar from "../components/NavBar";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { Zoom } from "react-toastify";
 
@@ -11,7 +12,7 @@ function AddJob({ onAddJob }) {
     const [contacts, setContact] = useState("");
     const [status, setStatus] = useState("");
     const [description, setDescription] = useState("");
-
+    const navigate = useNavigate()
     function success(){
         toast.success('Job Added Successfully!', {
             position: "top-center",
@@ -54,6 +55,8 @@ function AddJob({ onAddJob }) {
                 setContact("");
                 setStatus("");
                 setDescription("");
+                success()
+                navigate("/")
             })
             .catch((error) => console.error(error));
     }
@@ -69,6 +72,7 @@ function AddJob({ onAddJob }) {
                         <label className="block text-sm font-medium text-gray-700">Title</label>
                         <input
                             type="text"
+                            required
                             name="title"
                             value={jobTitle}
                             placeholder="Enter Title"
@@ -80,6 +84,7 @@ function AddJob({ onAddJob }) {
                         <label className="block text-sm font-medium text-gray-700">Company</label>
                         <input
                             type="text"
+                            required
                             name="company"
                             value={company}
                             placeholder="Enter Company Name"
@@ -91,6 +96,7 @@ function AddJob({ onAddJob }) {
                         <label className="block text-sm font-medium text-gray-700">Slots</label>
                         <input
                             type="number"
+                            required
                             name="slots"
                             value={slots}
                             placeholder="Enter slots left"
@@ -102,6 +108,7 @@ function AddJob({ onAddJob }) {
                         <label className="block text-sm font-medium text-gray-700">Deadline</label>
                         <input
                             type="date"
+                            required
                             name="deadline"
                             value={deadline}
                             onChange={(e) => setDeadline(e.target.value)}
@@ -112,6 +119,7 @@ function AddJob({ onAddJob }) {
                         <label className="block text-sm font-medium text-gray-700">Contact</label>
                         <input
                             type="email"
+                            required
                             name="contact"
                             value={contacts}
                             placeholder="Enter contact"
@@ -120,21 +128,19 @@ function AddJob({ onAddJob }) {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Status</label>
-                        <input
-                            type="text"
-                            name="status"
-                            value={status}
-                            placeholder="Enter Open or Closed"
-                            onChange={(e) => setStatus(e.target.value)}
-                            
-                            className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
-                        />
+                        <label className="block text-sm font-medium text-gray-700">Status </label>
+                        <select 
+                        value = {status}
+                        onChange={(e) => setStatus(e.target.value)}>
+                            <option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+                        </select>
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Description</label>
                         <input
                             type="text"
+                            required
                             name="description"
                             value={description}
                             placeholder="Enter Job description"
@@ -142,7 +148,7 @@ function AddJob({ onAddJob }) {
                             className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
-                    <button onClick={success} type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+                    <button  type="submit"  className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
                         Add to Job List
                     </button>
                     <ToastContainer />

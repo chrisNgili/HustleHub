@@ -30,7 +30,8 @@ function JobProfile() {
                 <NavBar />
             </header>
             <main>
-                <h1>{opportunity.jobTitle}</h1> 
+                <h1>Job Profile</h1>
+                <h2>{opportunity.jobTitle}</h2> 
                 <div className="job-details">
                     <p>Company: {opportunity.company}</p>
                     <p>Open Slots: {opportunity.slots}</p>

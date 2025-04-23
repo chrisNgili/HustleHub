@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function JobCard({ opportunity, onDelete, onEdit }) {
+function JobCard({ opportunity, onDelete }) {
     if (!opportunity) {
         return <div className="text-center text-gray-500">Not found</div>
     }
@@ -24,14 +24,14 @@ function JobCard({ opportunity, onDelete, onEdit }) {
                 </Link>
                 <Link
                     to={`/edit/${opportunity.id}`}
-                    className="ml-2 inline-block px-4 py-2 bg-yellow-500 text-white rounded-lg text-sm font-medium hover:bg-yellow-600"
+                    className="ml-2 inline-block px-4 py-2 bg-yellow-500 text-white rounded-lg text-sm font-medium hover:bg-yellow-700"
                 >
                     Edit
                 </Link>
 
                 <button 
                     onClick={() => onDelete(opportunity.id)}
-                    className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-700 transition"
+                    className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-900 transition"
                 >
                     Delete
                 </button>

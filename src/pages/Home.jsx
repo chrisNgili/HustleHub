@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import JobCard from "../components/JobCard";
 import Sort from "../components/Sort";
+import Footer from "../components/Footer";
 
 function Home() {
     const [opportunities, setOpportunity] = useState([]);
@@ -31,12 +32,12 @@ function Home() {
 
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="flex flex-col min-h-screen bg-gray-50">
             <header className="sticky top-0 z-50">
                 <NavBar />
             </header>
             
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
                     Available Opportunities
                 </h1>
@@ -53,6 +54,7 @@ function Home() {
                     </div>
                 )}
             </main>
+            <Footer />
         </div>
     );
 }

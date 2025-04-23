@@ -59,7 +59,6 @@ function EditJob() {
                     <input name="contacts" value={formData.contacts} onChange={handleChange} placeholder="Contacts" className="w-full p-2 border rounded" />
                     <input name="status" value={formData.status} onChange={handleChange} placeholder="Status" className="w-full p-2 border rounded" />
                     <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description" className="w-full p-2 border rounded" />
-
                     <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Update</button>
                 </form>
             </div>
