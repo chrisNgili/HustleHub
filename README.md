@@ -37,25 +37,51 @@
 * Deployment: Vercel
 
 ## 📁 File Structure:
-src/
-│
-├── components/
-│   ├── NavBar.jsx
-│   ├── JobCard.jsx
-│   ├── Sort.jsx
-│   └── Footer.jsx
-│
-├── pages/
-│   ├── Home.jsx
-│   ├── AddJob.jsx
-│   ├── About.jsx
-│   ├── JobProfile.jsx
-│   ├── EditJob.jsx
-│   └── ErrorPage.jsx
-│
-├── routes.js
-├── App.jsx
-└── index.js
+* Files are contained in the src folder.
+
+* Components:
+    NavBar.jsx
+
+    JobCard.jsx
+
+    Sort.jsx
+
+    Footer.jsx
+
+* Pages:
+    Home.jsx
+
+    AddJob.jsx
+
+    About.jsx
+
+    JobProfile.jsx
+
+    EditJob.jsx
+
+    ErrorPage.jsx
+
+* Other Important Files:
+    routes.jsx
+    main.jsx
+
+## 🚧 Local Setup:
+
+1. Clone the repo:
+    * git clone https://github.com/your-username/hustlehub.git
+    * cd hustlehub
+
+2. Install dependencies:
+    * npm install
+
+3. Run the app:
+    * npm run dev
+
+4. Backend:
+    * The JSON server is hosted on Render.
+    * To run it locally:
+        npm install -g json-server
+        json-server --watch db.json --port 5000
 
 ## Future Enhancements:
 
