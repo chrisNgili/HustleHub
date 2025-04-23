@@ -44,7 +44,7 @@ function JobCard({ opportunity, onDelete }) {
                     to={`/job/${opportunity.id}`} 
                     className="flex-1 text-center px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
                 >
-                    View Details
+                    View Description
                 </Link>
                 <Link
                     to={`/edit/${opportunity.id}`}
