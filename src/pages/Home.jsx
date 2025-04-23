@@ -39,8 +39,18 @@ function Home() {
             <header className="sticky top-0 z-50">
                 <NavBar />
             </header>
-            <div className="flex justify-center mb-6">
-                <img src={gif} alt="Animated Image" width="300" height="auto" />
+            <div className="flex justify-center mb-6 w-full">
+                <img src={gif} alt="Animated Image" width={300} height={300}/>
+            </div>
+            <div className="bg-gradient-to-r from-emerald-300 to-green-500 py-12 px-4 sm:px-6 rounded-xl shadow-lg">
+                <div className="max-w-3xl mx-auto text-center">
+                    <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Welcome to  <span className="bg-gradient-to-r from-lime-300 to-emerald-300 bg-clip-text text-transparent">HustleHub</span>!
+                    </h1>
+                    <p className="text-lg md:text-xl text-gray-100 font-medium">
+                    A platform where employers showcase job opportunities and job seekers connect with their next big break.
+                    </p>
+                </div>
             </div>
             <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">

@@ -124,13 +124,16 @@ function AddJob() {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700">Status </label>
-                        <select className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
-                        value = {status}
-                        onChange={(e) => setStatus(e.target.value)}>
-                            <option value="Open">Open</option>
-                            <option value="Closed">Closed</option>
-                        </select>
+                            <label>Status:
+                            <input
+                            type="text"
+                            name="status"
+                            value={status}
+                            placeholder="Enter status: Open or Closed"
+                            onChange={(e) => setStatus(e.target.value)}
+                            className="mt-1 w-full border border-gray-300 rounded-lg p-2 focus:ring-blue-500 focus:border-blue-500"
+                            />
+                        </label>
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Description</label>
