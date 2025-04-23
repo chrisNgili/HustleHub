@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { Zoom } from "react-toastify";
+import Footer from "../components/Footer";
 
 function AddJob({ onAddJob }) {
     const [jobTitle, setTitle] = useState("");
@@ -154,6 +155,7 @@ function AddJob({ onAddJob }) {
                     <ToastContainer />
                 </form>
             </div>
+            <Footer />
         </div>
     );
 }

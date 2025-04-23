@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 function EditJob() {
     const { id } = useParams();
@@ -62,6 +63,7 @@ function EditJob() {
                     <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Update</button>
                 </form>
             </div>
+            <Footer />
         </div>
     );
 }
