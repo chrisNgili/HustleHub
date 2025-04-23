@@ -24,7 +24,7 @@ function JobCard({ opportunity, onDelete }) {
                 </Link>
                 <Link
                     to={`/edit/${opportunity.id}`}
-                    className="ml-2 inline-block px-4 py-2 bg-yellow-500 text-white rounded-lg text-sm font-medium hover:bg-yellow-700"
+                    className="ml-1 inline-block px-4 py-2 bg-yellow-500 text-white rounded-lg text-sm font-medium hover:bg-yellow-700"
                 >
                     Edit
                 </Link>
