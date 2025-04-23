@@ -31,6 +31,10 @@ const routes =[
         path: "/edit/:id",
         element: <EditJob />,
         errorElement: <ErrorPage />
+    },
+    {
+        path: "*",
+        element: <ErrorPage />
     }
 ]
 
