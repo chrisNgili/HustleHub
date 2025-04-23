@@ -43,7 +43,7 @@ function JobProfile() {
                     <div className="space-y-4 text-gray-700">
                         <p><span className="font-semibold">Company:</span> {opportunity.company}</p>
                         <p><span className="font-semibold">Open Slots:</span> {opportunity.slots}</p>
-                        <p><span className="font-semibold">Deadline:</span> {new Date(opportunity.applicationsDeadline).toLocaleDateString()}</p>
+                        <p><span className="font-semibold">Deadline:</span> {new Date(opportunity.deadline).toLocaleDateString()}</p>
                         <p><span className="font-semibold">Contact:</span> {opportunity.contacts}</p>
                         <p><span className="font-semibold">Status:</span> {opportunity.status}</p>
                         <p><span className="font-semibold">Description:</span> {opportunity.description}</p>
